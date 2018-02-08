@@ -147,7 +147,7 @@ static uint64_t frag_id;         /* fragment id counter */
 static struct msg_tqh free_msgq; /* free msg q */
 static struct rbtree tmo_rbt;    /* timeout rbtree */
 static struct rbnode tmo_rbs;    /* timeout rbtree sentinel */
-static size_t alloc_msgs_max;	 /* maximum number of allowed allocated messages */
+static size_t alloc_msgs_max;     /* maximum number of allowed allocated messages */
 uint8_t g_timeout_factor = 1;
 
 func_msg_coalesce_t  g_pre_coalesce;    /* message pre-coalesce */
@@ -458,8 +458,8 @@ msg_get(struct conn *conn, bool request, const char * const caller)
             }
         }
     } else{
-    	log_debug(LOG_VVERB,"incorrect selection of data store %d", g_data_store);
-    	exit(0);
+        log_debug(LOG_VVERB,"incorrect selection of data store %d", g_data_store);
+        exit(0);
     }
 
     if (log_loggable(LOG_VVERB)) {
@@ -599,8 +599,8 @@ void
 msg_put(struct msg *msg)
 {
     if (msg == NULL) {
-   	    log_debug(LOG_ERR, "Unable to put a null msg - probably due to memory hard-set limit");
-   	    return;
+       log_debug(LOG_ERR, "Unable to put a null msg - probably due to memory hard-set limit");
+       return;
     }
 
     if (msg->is_request && msg->awaiting_rsps != 0) {
